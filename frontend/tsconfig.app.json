@@ -22,5 +22,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": [
+    "src/**/*",         // Include all source files
+    "src/types/**/*ion-icons.d.ts" // Include all .d.ts files inside the types directory
+  ]
 }
