@@ -7,7 +7,7 @@ class SignallingManager{
   private wss :WebSocketServer
   private constructor(){
     SignallingManager.notes=[]
-    this.wss=new WebSocket.Server({port:process.env.WSPORT})
+    this.wss=new WebSocket.Server({port:process.env.PORT})
     console.log(`WebSocket server started on port 4000`);
     this.init()
   }
