@@ -1,1 +1,1 @@
-{"root":["./src/server.ts"],"version":"5.6.3"}
+{"root":["./src/app.ts","./src/server.ts","./src/controller/authcontroller.ts","./src/controller/notecontroller.ts","./src/model/notesmodel.ts","./src/model/usermodel.ts","./src/routes/noteroutes.ts","./src/routes/userroutes.ts","./src/utils/errorclass.ts","./src/utils/signalingmanager.ts"],"errors":true,"version":"5.6.3"}
