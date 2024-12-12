@@ -17,7 +17,7 @@ const ws_1 = require("ws");
 class SignallingManager {
     constructor() {
         SignallingManager.notes = [];
-        this.wss = new ws_1.WebSocket.Server({ port: 8000 });
+        this.wss = new ws_1.WebSocket.Server({ port: process.env.WSPORT });
         console.log(`WebSocket server started on port 4000`);
         this.init();
     }
