@@ -27,7 +27,7 @@ export default function NotesPage(): JSX.Element {
   }, []);
   
   useEffect(()=>{
-      const ws=new WebSocket('ws://localhost:8000')
+      const ws=new WebSocket('ws://localhost:4000')
     const { _id } = JSON.parse(localStorage.getItem('auth') || '{}');
     if(_id){
     ws.onopen=()=>{
