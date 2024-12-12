@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv';
 
-dotenv.config({path:'../.env'});
+dotenv.config();
 const app=express()
 
 mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.qs1tf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
