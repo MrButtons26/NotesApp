@@ -41,6 +41,12 @@ The Notes App is a robust full-stack application engineered to deliver an extens
     AUTHORIZATION="TMDB API authentication key"
     ```
 
+4.  **Compile the tsc Files:** .
+
+    ```sh
+    tsc -b 
+    ```
+    
 4.  **Start the Server:** Run the backend server.
 
     ```sh
