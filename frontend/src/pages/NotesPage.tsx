@@ -27,7 +27,7 @@ export default function NotesPage(): JSX.Element {
   }, []);
   
   useEffect(()=>{
-      const ws=new WebSocket('ws://localhost:4000')
+      const ws=new WebSocket('ws://https://notesapp-m984.onrender.com')
     const { _id } = JSON.parse(localStorage.getItem('auth') || '{}');
     if(_id){
     ws.onopen=()=>{
@@ -84,15 +84,19 @@ else{
   await editNote(edit[1],token,note)
   setEdit([-1,''])
   setNote('')
-}   
-socket?.send('subscribeToNotes')
+}    const data = await getNotes(token);
+setNotesData([...data.data.notes]);
+// socket?.send('subscribeToNotes')
 
   }
   async function deleteContent(noteId:string) {
-    const { token } = JSON.parse(localStorage.getItem('auth') || '{}');
+    const { token,} = JSON.parse(localStorage.getItem('auth') || '{}');
     const query=await deleteNote(noteId,token)
     setNotesLoader(true);
-    socket?.send('subscribeToNotes')
+    // socket?.send('subscribeToNotes')
+    setNotesData(notesData.filter((el)=>el._id!=noteId))
+    const data = await getNotes(token);
+    setNotesData([...data.data.notes]);
     setNotesLoader(false);
   }
   async function editContent(noteId:string,i:number,content:string) {
@@ -170,3 +174,5 @@ return `${date}:${month}:${year}  ${day}`;
     </>
   );
 }
+
+

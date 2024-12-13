@@ -4,6 +4,7 @@ import cors from 'cors'
 import UserRouter from './Routes/UserRoutes'
 import NoteRouter from './Routes/NoteRoutes'
 import SignallingManager from './utils/SignalingManager'
+
   app.use(cors());
   app.use(express.json());
  const manager=SignallingManager.getInstance()

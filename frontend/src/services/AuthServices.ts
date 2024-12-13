@@ -3,7 +3,7 @@ import axios from "axios";
 export const signUp=async({ username, email, password })=> {
     console.log(23)
     try {
-        const res = await axios.post(`http://localhost:3000/user/signup`, {
+        const res = await axios.post(`https://notesapp-m984.onrender.com/user/signup`, {
             userName: username,
             email: email,
             password: password,
@@ -16,7 +16,7 @@ export const signUp=async({ username, email, password })=> {
 }
 export const login=async ({ email, password })=> {
 
-    const res = await axios.post(`http://localhost:3000/user/login`, {
+    const res = await axios.post(`https://notesapp-m984.onrender.com/user/login`, {
         email: email,
         password: password
     });

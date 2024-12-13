@@ -3,7 +3,7 @@ import axios from "axios";
 export const createNote=async(content:string,token:string)=> {
     console.log(23)
     try {
-        const note = await axios.post(`http://localhost:3000/note`,{content:content},{
+        const note = await axios.post(`https://notesapp-m984.onrender.com/note`,{content:content},{
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -16,7 +16,7 @@ export const createNote=async(content:string,token:string)=> {
 }
 export const getNotes=async ( token)=> {
 
-    const res = await axios.get(`http://localhost:3000/note`,{ headers: {
+    const res = await axios.get(`https://notesapp-m984.onrender.com/note`,{ headers: {
         Authorization: `Bearer ${token}`
     } });
     if (res.status === 401) {
@@ -28,7 +28,7 @@ export const getNotes=async ( token)=> {
 export const deleteNote=async (id:string,token:string)=> {
 
     const res = await axios.delete(
-        `http://localhost:3000/note`, // URL
+        `https://notesapp-m984.onrender.com/note`, // URL
         {
           data: { id:id}, // Body data for the DELETE request
           headers: {
@@ -46,7 +46,7 @@ export const deleteNote=async (id:string,token:string)=> {
 export const editNote=async (id:string,token:string,content:string)=> {
 
     const res = await axios.patch(
-        `http://localhost:3000/note`, // URL
+        `https://notesapp-m984.onrender.com/note`, // URL
         { id: id, content: content }, // Body data for the PATCH request
         {
           headers: {
